@@ -1,0 +1,87 @@
+<div class="weather-app">
+    <div class="weather-header">
+      <h1>Weathery</h1>
+    </div>
+  
+    <div class="weather-inputs">
+      <!-- Dropdown for selecting a country -->
+      <div class="input-group">
+        <select class="form-control" [(ngModel)]="selectedCountry" (change)="onCountrySelect($event)">
+          <option *ngFor="let country of countries" [value]="country.key">
+            {{ country.name }}
+          </option>
+        </select>
+      </div>
+  
+      <!-- Latitude and Longitude input fields -->
+      <div class="input-group">
+        <input type="number" class="form-control" placeholder="Latitude" [(ngModel)]="lat" aria-label="Latitude" />
+        <input type="number" class="form-control" placeholder="Longitude" [(ngModel)]="lon" aria-label="Longitude" />
+      </div>
+  
+      <!-- Button to fetch weather data -->
+      <button class="btn btn-search" (click)="onSearch()">Get Weather</button>
+    </div>
+  
+    <!-- Error message -->
+    <div *ngIf="errorMessage" class="alert alert-danger">
+      {{ errorMessage }}
+    </div>
+  
+    <!-- Display weather data -->
+    <div *ngIf="weatherData" class="weather-display">
+      <div class="location-info">
+        <h2>{{ weatherData.name }}, {{ weatherData.sys.country }}</h2>
+        <p>{{ weatherData.weather[0].description }}</p>
+      </div>
+  
+      <div class="weather-details">
+        
+        <div class="weather-item d-flex">
+          <div class="col-6"><img src="assets/celsius.png" type="png/jpg" alt=" Temperature"></div>
+          <div class="d-block col-6">
+            <h3 >Temperature</h3><br>
+          <p>{{ weatherData.main.temp }} °C</p>
+          </div>
+          
+        </div>
+        <div class="weather-item d-flex">
+          <div class="col-6"> <img src=" assets/cloudy.png" alt=""></div>
+          <div class="d-block col-6">
+          <h3>Feels Like</h3>
+          <p>{{ weatherData.main.feels_like }} °C</p>
+        </div>
+      </div>
+        <div class="weather-item d-flex" >
+          <div class="col-6"> <img src="assets/humidity.png" alt=""></div>
+          <div class="d-block col-6">
+          <h3>Humidity</h3>
+          <p>{{ weatherData.main.humidity }} %</p>
+        </div>
+        </div>
+        <div class="weather-item d-flex" >
+          <div class="col-6"> <img src="assets/wind.png" alt=""></div>
+          <div class="d-block col-6">
+          <h3>Wind Speed</h3>
+          <p>{{ weatherData.wind.speed }} m/s</p>
+        </div>
+        </div>
+        <div class="weather-item d-flex">
+          <div class="col-6"> <img src="assets/clouds.png" alt=""></div>
+          <div class="d-block col-6">
+          <h3>Cloudiness</h3>
+          <p>{{ weatherData.clouds.all }} %</p>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  
+
+
+
+
+  
+  

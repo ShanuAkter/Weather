@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,900&display=swap');
+
+/* Weather App Container */
+.weather-app {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background: linear-gradient(145deg, #dceafd, #77b9f3);
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(83, 149, 255, 0.369);
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Header Styling */
+.weather-header h1 {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Input Section Styling */
+.weather-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #638593;
+  border-radius: 8px;
+  background: #fff;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.form-control:focus {
+  border-color: #007bff;
+}
+
+/* Button Styling */
+.btn-search {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.2em;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn-search:hover {
+  background-color: #0056b3;
+}
+
+/* Error Message */
+.alert {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #f8d7da;
+  color: #721c24;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* Weather Display Section */
+.weather-display {
+  text-align: center;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(45, 136, 255, 0.499);
+  margin-top: 20px;
+}
+
+.location-info h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.weather-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.weather-item {
+  background-color: #f1f1f1;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(46, 131, 249, 0.473);
+}
+
+.weather-item h3 {
+  margin: 0;
+  font-size: 1.2em;
+  color: #333;
+}
+
+.weather-item p {
+  margin: 5px 0 0;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.weather-item {
+  text-align: end;
+
+}
